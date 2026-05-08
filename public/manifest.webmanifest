@@ -1,0 +1,19 @@
+{
+  "name": "Modul4r Shipping Label Generator",
+  "short_name": "Labels",
+  "description": "Generate and print shipping labels online for Canada and US addresses.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#f5f5f5",
+  "theme_color": "#c98c4f",
+  "lang": "en",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
