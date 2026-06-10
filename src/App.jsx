@@ -189,81 +189,94 @@ function App() {
   }
 
   return (
-    <div className="container">
-      <div className="controls no-print">
-        <div className="controls-header">
-          <h1>Shipping Label Generator</h1>
+    <div className="app">
+      <main className="container">
+        <div className="masthead no-print">
+          <span className="eyebrow">Shipping Labels</span>
+          <h1>Print a shipping label</h1>
+          <p className="sub">
+            Fill in sender and receiver, then print. Free, no signup, Canada &amp; US
+            addresses, and nothing ever leaves your browser.
+          </p>
+        </div>
 
-          <button onClick={handlePrint}>
-            Print Label
+        <div className="controls no-print">
+          <div className="form-grid">
+            <AddressForm title="Sender" data={sender} setData={setSender} />
+            <AddressForm title="Receiver" data={receiver} setData={setReceiver} />
+          </div>
+        </div>
+
+        <div className="preview-head no-print">
+          <span className="preview-tag">Label preview</span>
+          <button className="primary" onClick={handlePrint}>
+            Print label
           </button>
         </div>
 
-        <div className="form-grid">
-          <AddressForm
-            title="Sender"
-            data={sender}
-            setData={setSender}
-          />
+        <div className="canvas">
+          <div className="label">
+            <div className="from-section">
+              <div className="section-title">FROM</div>
 
-          <AddressForm
-            title="Receiver"
-            data={receiver}
-            setData={setReceiver}
-          />
-        </div>
-      </div>
-
-      <div className="label">
-        <div className="from-section">
-          <div className="section-title">FROM</div>
-
-          <div className="from-body">
-            <div>{sender.name}</div>
-            <div>{sender.address}</div>
-            <div>
-              {[
-                sender.city,
-                sender.province,
-                sender.city && sender.province
-                  ? COUNTRY_LABELS[sender.country] ||
-                    sender.country
-                  : '',
-              ]
-                .filter(Boolean)
-                .join(', ')}
+              <div className="from-body">
+                <div>{sender.name}</div>
+                <div>{sender.address}</div>
+                <div>
+                  {[
+                    sender.city,
+                    sender.province,
+                    sender.city && sender.province
+                      ? COUNTRY_LABELS[sender.country] || sender.country
+                      : '',
+                  ]
+                    .filter(Boolean)
+                    .join(', ')}
+                </div>
+                <div>{sender.postal}</div>
+              </div>
             </div>
-            <div>{sender.postal}</div>
-          </div>
-        </div>
 
-        <div className="to-section">
-          <div className="section-title">TO</div>
+            <div className="to-section">
+              <div className="section-title">TO</div>
 
-          <div className="receiver-name">
-            {receiver.name}
-          </div>
+              <div className="receiver-name">{receiver.name}</div>
 
-          <div className="receiver-body">
-            <div>{receiver.address}</div>
-            <div>
-              {[
-                receiver.city,
-                receiver.province,
-                receiver.city && receiver.province
-                  ? COUNTRY_LABELS[receiver.country] ||
-                    receiver.country
-                  : '',
-              ]
-                .filter(Boolean)
-                .join(', ')}
-            </div>
-            <div className="receiver-postal">
-              {receiver.postal}
+              <div className="receiver-body">
+                <div>{receiver.address}</div>
+                <div>
+                  {[
+                    receiver.city,
+                    receiver.province,
+                    receiver.city && receiver.province
+                      ? COUNTRY_LABELS[receiver.country] || receiver.country
+                      : '',
+                  ]
+                    .filter(Boolean)
+                    .join(', ')}
+                </div>
+                <div className="receiver-postal">{receiver.postal}</div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+
+        <p className="note no-print">
+          Tip: in the print dialog choose Letter size and 100% scale for a crisp label.
+        </p>
+      </main>
+
+      <footer className="foot no-print">
+        <a
+          className="foot-brand"
+          href="https://modul4r.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          A modul4r tool · <strong>modul4r.com</strong> →
+        </a>
+        <span>Modul4r</span>
+      </footer>
     </div>
   )
 }
