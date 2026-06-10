@@ -193,7 +193,7 @@ function App() {
       <main className="container">
         <div className="masthead no-print">
           <span className="eyebrow">Shipping Labels</span>
-          <h1>Print a shipping label</h1>
+          <h1>Print a Shipping Label</h1>
           <p className="sub">
             Fill in sender and receiver, then print. Free, no signup, Canada &amp; US
             addresses, and nothing ever leaves your browser.
@@ -208,9 +208,9 @@ function App() {
         </div>
 
         <div className="preview-head no-print">
-          <span className="preview-tag">Label preview</span>
+          <span className="preview-tag">Label Preview</span>
           <button className="primary" onClick={handlePrint}>
-            Print label
+            Print Label
           </button>
         </div>
 
@@ -273,7 +273,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          A modul4r tool · <strong>modul4r.com</strong> →
+          A Modul4r Tool · <strong>modul4r.com</strong> →
         </a>
         <span>Modul4r</span>
       </footer>
