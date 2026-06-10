@@ -121,13 +121,13 @@ select {
   appearance: none;
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'><path fill='%239a978c' d='M6 8L0 0h12z'/></svg>");
   background-repeat: no-repeat;
-  background-position: right 12px center;
-  padding-right: 32px;
+  background-position: right 10px center;
+  padding-right: 28px;
 }
 
 .row-three {
   display: grid;
-  grid-template-columns: 2fr 1fr 1.5fr;
+  grid-template-columns: minmax(0, 1.6fr) minmax(0, 1.3fr) minmax(0, 1.3fr);
   gap: 8px;
 }
 
